@@ -1,0 +1,14 @@
+.board{
+
+	border: solid black;
+	position:relative;
+
+}
+
+.square {
+
+	background-color: orange;
+	height: 50px;
+	width: 50px;
+	position:absolute;
+}
