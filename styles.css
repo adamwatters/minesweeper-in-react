@@ -1,14 +1,19 @@
 .board{
 
-	border: solid black;
 	position:relative;
+	border: solid black 1px;
 
 }
 
 .square {
 
+	border: solid black 1px;
 	background-color: orange;
-	height: 50px;
-	width: 50px;
+	height: 48px;
+	width: 48px;
 	position:absolute;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;  
+
 }

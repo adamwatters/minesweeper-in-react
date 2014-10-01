@@ -2,6 +2,16 @@
 
 var Square = React.createClass({
 
+	getInitialState: function() {
+		return {hidden: true};
+	},
+
+	handleClick: function() {
+		if (this.state.hidden) {
+			this.setState({hidden: false})
+		};
+	},
+
 	getPosition: function() {
 		return {
 			left: this.props.x * 50,
@@ -10,23 +20,23 @@ var Square = React.createClass({
 	},
 
 	getDisplay: function() {
-		console.log('getting display')
-		if (this.props.mine) {
-			console.log("mine @" + this.props.x + " " + this.props.y)
-			return "MINE";
-		} else if (this.props.near > 0){
-			return this.props.near;
+		if (this.state.hidden) {
+			return " ";
 		} else {
-			return " "
+			if (this.props.mine) {
+				return "MINE";
+			} else if (this.props.near > 0){
+				return this.props.near;
+			} else {
+				return "0"
+			};
 		};
 	},
 
 	render: function() {
-		this.getDisplay();
-		var display = 'square'
 		return (
-			<div className='square' style={this.getPosition()}>
-				{this.props.mine.toString()}
+			<div className='square' style={this.getPosition()} onClick={this.handleClick}>
+				{this.getDisplay()}
 			</div>
 		);
 	}
