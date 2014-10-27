@@ -1,11 +1,11 @@
 
-var META = {height:12, width:12, mines:0}
+var META = {height:10, width:10, mines:0}
 var MAP = [];
 var mineMaker;
 
 for (var i = 0; i < META.width; i++){
 	for (var j = 0; j < META.height; j++){
-		if (Math.random()>.85) {
+		if (Math.random()>.80) {
 			mineMaker = true;
 			META.mines ++;
 		} else {
